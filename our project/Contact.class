@@ -1,0 +1,68 @@
+// Source code is decompiled from a .class file using FernFlower decompiler.
+package project;
+
+public class Contact {
+   private String name;
+   private String phoneNumber;
+   private String email;
+   private String address;
+   private String birthday;
+   private String notes;
+
+   public Contact(String n, String p, String em, String add, String bd, String not) {
+      this.name = n;
+      this.phoneNumber = p;
+      this.email = em;
+      this.address = add;
+      this.birthday = bd;
+      this.notes = not;
+   }
+
+   public String getAddress() {
+      return this.address;
+   }
+
+   public String getBirthday() {
+      return this.birthday;
+   }
+
+   public String getEmail() {
+      return this.email;
+   }
+
+   public String getName() {
+      return this.name;
+   }
+
+   public String getNotes() {
+      return this.notes;
+   }
+
+   public String getPhoneNumber() {
+      return this.phoneNumber;
+   }
+
+   public void setAddress(String address) {
+      this.address = address;
+   }
+
+   public void setBirthday(String birthday) {
+      this.birthday = birthday;
+   }
+
+   public void setEmail(String email) {
+      this.email = email;
+   }
+
+   public void setName(String name) {
+      this.name = name;
+   }
+
+   public void setNotes(String notes) {
+      this.notes = notes;
+   }
+
+   public void setPhoneNumber(String phoneNumber) {
+      this.phoneNumber = phoneNumber;
+   }
+}

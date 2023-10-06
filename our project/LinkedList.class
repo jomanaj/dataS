@@ -1,0 +1,86 @@
+// Source code is decompiled from a .class file using FernFlower decompiler.
+package project;
+
+public class LinkedList<T> {
+   private Node<T> head;
+   private Node<T> current;
+
+   public LinkedList() {
+      this.head = this.current = null;
+   }
+
+   public boolean empty() {
+      return this.head == null;
+   }
+
+   public boolean last() {
+      return this.current.next == null;
+   }
+
+   public void findFirst() {
+      this.current = this.head;
+   }
+
+   public void findNext() {
+      this.current = this.current.next;
+   }
+
+   public T retrieve() {
+      return this.current.data;
+   }
+
+   public void update(T c) {
+      this.current.data = c;
+   }
+
+   public void insert(T c) {
+      if (this.empty()) {
+         this.current = this.head = new Node(c);
+      } else {
+         Node<T> temp = this.current.next;
+         this.current.next = new Node(c);
+         this.current = this.current.next;
+         this.current.next = temp;
+      }
+
+   }
+
+   public void remove() {
+      if (this.current == this.head) {
+         this.head = this.head.next;
+      } else {
+         Node temp;
+         for(temp = this.head; temp.next != this.current; temp = temp.next) {
+         }
+
+         temp.next = this.current.next;
+      }
+
+      if (this.current.next == null) {
+         this.current = this.head;
+      } else {
+         this.current = this.current.next;
+      }
+
+   }
+
+   public static <T> boolean search(LinkedList<T> l, T c) {
+      if (!l.empty()) {
+         l.findFirst();
+
+         while(!l.last()) {
+            if (l.retrieve().equals(c)) {
+               return true;
+            }
+
+            l.findNext();
+         }
+
+         if (l.retrieve().equals(c)) {
+            return true;
+         }
+      }
+
+      return false;
+   }
+}
